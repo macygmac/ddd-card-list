@@ -36,96 +36,80 @@
   <div id="demo">
     <h1>ddd-card-list</h1>
     <!-- this is going to do whatever the tag's defaults are -->
-    <h2>Default</h2>
-    <ddd-card-list></ddd-card-list>
-    <h2>Slot usage</h2>
-    <ddd-card-list data-accent="2" data-primary="17"><div>Sample slot content</div></ddd-card-list>
-    <h2>Property usage</h2>
-    <ddd-card-list id="example" title="Sample property title"></ddd-card-list>
+    <h2>Campus Locations</h2>
+    
+    <ddd-card-list ddd-primary="10" ddd-accent="2">
+
+      <ddd-card title="Abington" 
+      link="https://www.psu.edu/academics/campuses/abington" 
+      image="https://images.ctfassets.net/ni9rh5nu0d99/1paFaX2Dc7iHh9Z6K7mIim/1427b9970ff21dd9c8a770067638efc1/abington-02.jpg?fm=webp&w=1080&q=75">
+      <p>Close to Philadelphia, Penn State Abington’s suburban campus offers bachelor's degrees, athletics, and a diverse student community.</p></ddd-card>
+
+      <ddd-card title ="Altoona"
+      link="https://www.psu.edu/academics/campuses/altoona"
+      image="https://images.ctfassets.net/ni9rh5nu0d99/6oBUNrVTNPJaoE9ahnVX2E/2c655bdcf28befdf81d5a24248a9dca5/altoona-01.jpg?fm=webp&w=1080&q=75">
+      <p>In central Pennsylvania close to University Park, Penn State Altoona offers the appeal of a small college with the prestige of a major research university.</p>
+      </ddd-card>
+
+      <ddd-card title ="Beaver"
+      link="https://www.psu.edu/academics/campuses/beaver"
+      image="https://images.ctfassets.net/ni9rh5nu0d99/C6YPZMqHyRaPeRrVTun8k/1ca61866afa1b3d903944a38ea34cecc/beaver-01.jpg?fm=webp&w=1080&q=75">
+      <p>Situated on one hundred acres, Penn State Beaver offers several bachelor's degrees, on-campus housing, and varsity sports, all within easy reach of Pittsburgh.</p>
+      </ddd-card>
+
+      <ddd-card title = "Behrend"
+      link="https://www.psu.edu/academics/campuses/behrend"
+      image="https://images.ctfassets.net/ni9rh5nu0d99/1at2Tdx2RaIuI56SVrUWFM/b06b752a3e78509f0266db2b59aa5364/behrend-01.jpg?fm=webp&w=1080&q=75">
+      <p>Located in northwestern Pennsylvania, Penn State Behrend offers undergraduate and graduate degrees, research experiences, on-campus living, and athletics.</p>
+      </ddd-card>
+
+      <ddd-card  title = "Berks"
+      link="https://www.psu.edu/academics/campuses/berks"
+      image= "https://images.ctfassets.net/ni9rh5nu0d99/3WXgadpl3oKX50MmPHGV6m/a91103dc9e4bbe123e29fd25b81e3402/berks-02.jpg?fm=webp&w=1080&q=75">
+      <p>Penn State Berks offers bachelor’s degrees and four associate programs with small classes, internships, undergraduate research opportunities, and residential campus life.</p>
+      </ddd-card>
+
+      <ddd-card title="Brandywine"
+      link="https://www.psu.edu/academics/campuses/brandywine"
+      image= "https://images.ctfassets.net/ni9rh5nu0d99/2p1eWsDl9umbeRKa02UEsQ/bba80b11dd34aecab19db215eaa8bb59/brandywine-01.jpg?fm=webp&w=1080&q=75">
+      <p>Penn State Brandywine is all about the highest quality in teaching, research, scholarship, and service to the campus, students, and the Delaware County community.</p>
+
+      
+
+      </ddd-card>
+
+
+
+
+
+    </ddd-card-list>
+   
   </div>
   <script type="module" src="./ddd-card-list.js"></script>
+  <script type="module" src="./ddd-card.js"></script>
 
-  <!-- Take HAX, the Web and you further down the rabbit hole -->
-  <style>
-    #follow-the-white-rabbit {
-      margin: var(--ddd-spacing-4) auto 64px  16px;
-      background-color: var(--ddd-accent-4);
-      color: black;
-    }
-    #follow-the-white-rabbit[open] summary {
-      background-color: var(--ddd-accent-4) !important;
-      color: black;
-    }
-    #follow-the-white-rabbit[open] .content {
-      padding: 0 var(--ddd-spacing-4);
-    }
-    #follow-the-white-rabbit ul,
-    #follow-the-white-rabbit li {
-      padding: 0;
-      margin: 0;
-    }
-    #follow-the-white-rabbit li {
-      font-size: var(--ddd-font-size-xs);
-      list-style: none;
-    }
-    #follow-the-white-rabbit li strong,
-    #follow-the-white-rabbit li a {
-      padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
-      color: black;
-      display: block;
-      font-weight: bold;
-    }
-    #follow-the-white-rabbit li:focus-within a,
-    #follow-the-white-rabbit li:hover a {
-      background-color: black;
-      color: yellow;
-    }
-  </style>
-  <details id="follow-the-white-rabbit" open>
-    <summary>How to Develop</summary>
-    <div class="content">
-      <p>
-      
-        <strong>Checkout project on github:</strong> <a href="https://github.com/macygmac/ddd-card-list" target="_blank" rel="nofollow">macygmac/ddd-card-list</a>
-        
-      </p>
-      <p>
-        You can edit the current page by modifying <code>index.html</code><br />
-        To edit your <strong>ddd-card-list</strong> tag, modify <code>src/ddd-card-list.js</code>.
-        This file contains all the HTML, CSS and JavaScript used to render your elements above!
-      </p>
-      <p>
-        Web components are easy to follow once you get used to their pattern.
-        Below are links to help on your journey. Good luck, we need you!
-      </p>
-      <ul>
-        <li><a href="https://haxtheweb.org/documentation/ddd" target="_blank">🧑‍🎨 Learn DDD HAX Design system</a></li>
-        <li><a href="https://lit.dev/playground/" target="_blank" rel="nofollow">🔥 Learn Lit</a></li>
-        <li><a href="https://hax.psu.edu" target="_blank">🧙 HAX The Web @ Penn State</a></li>
-      </ul>
-      <h2>Join and Share HAX</h2>
-      <ul>
-        <li><a href="https://github.com/haxtheweb/issues/issues" target="_blank" rel="nofollow">🔮 Ideas to HAX Harder, Better, Faster, Stronger</a></li>
-        <li><a href="https://bit.ly/hax-the-linkedin" target="_blank" rel="nofollow">👔 Share on LinkedIn</a></li>
-        <li><a href="https://bit.ly/hax-the-x" target="_blank" rel="nofollow">🧵 Tweet on X</a></li>
-        <li><a href="https://bit.ly/hax-discord" target="_blank" rel="nofollow">💬 Join Community</a></li>
-      </ul>
-      <h2>Learn the languages and tools</h2>
-      <ul>
-        <li><a href="https://w3schools.com" target="_blank" rel="nofollow">🌐 Learn HTML</a></li>
-        <li><a href="https://web.dev/learn/css/" target="_blank" rel="nofollow">🎨 Learn CSS</a></li>
-        <li><a href="http://Javascript.info" target="_blank" rel="nofollow">💻 Learn JavaScript (JS)</a></li>
-        <li><a href="https://gitimmersion.com" target="_blank" rel="nofollow">🦺 Learn Git / Github</a></li>
-        <li><a href="https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/" target="_blank" rel="nofollow">📦 Learn NPM</a></li>
-        <li><a href="http://learnux.io" target="_blank" rel="nofollow">📐 Learn UX / UI development</a></li>
-      </ul>
-      <h2>Find purpose and inspiration</h2>
-      <ul>
-        <li><a href="https://www.youtube.com/watch?v=eC7xzavzEKY" target="_blank" rel="nofollow">🐟 This is Water - David Foster Wallace</a></li>
-        <li><a href="https://www.youtube.com/watch?v=kYfNvmF0Bqw" target="_blank" rel="nofollow">🏗️ Secrets of Life - Steve Jobs</a></li>
-        <li><strong>💡 <em>Never. Stop. Innovating.</em></strong></li>
-      </ul>
-    </div>
-  </details>
+
+
+
+
+
+
+ <!-- HIS SAMPLE CODE
+  <ddd-card title="Shenango" label="whatever" link="whatever.com" ddd-primary="20" ddd-accent="5">
+  <p>Other text</p>
+</ddd-card>
+<ddd-card-list ddd-primary="10"  ddd-accent="2">
+  <ddd-card title="Shenango" label="whatever" link="whatever.com">
+    <p>Other text</p>
+  </ddd-card>
+  <ddd-card title="Shenango" label="whatever" link="whatever.com">
+    <p>Other text</p>
+  </ddd-card>
+  <ddd-card title="Shenango" label="whatever" link="whatever.com">
+    <p>Other text</p>
+  </ddd-card>
+</ddd-card-list>-->
+
+
 </body>
 </html>
