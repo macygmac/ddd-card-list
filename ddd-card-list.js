@@ -21,26 +21,14 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
 
   constructor() {
     super();
-    this.title = "";
-    this.t = this.t || {};
-    this.t = {
-      ...this.t,
-      title: "Title",
-    };
-    this.registerLocalization({
-      context: this,
-      localesPath:
-        new URL("./locales/ddd-card-list.ar.json", import.meta.url).href +
-        "/../",
-      locales: ["ar", "es", "hi", "zh"],
-    });
+    
   }
 
   // Lit reactive properties
   static get properties() {
     return {
       ...super.properties,
-      title: { type: String },
+      
     };
   }
 
@@ -53,14 +41,25 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
         color: var(--ddd-theme-primary);
         background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
+
       }
       .wrapper {
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
       }
-      h3 span {
+      .title-bar {  
+        padding: var(--ddd-spacing-2);
+        font-weight: bold;
+      }
+      div ::slotted(*) {
+        display: inline-block;
+     
+      }
+      h3 {
+        padding-left: var(--ddd-spacing-2);
         font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
       }
+      
     `];
   }
 
@@ -68,7 +67,7 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
 <div class="wrapper">
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
+  
   <slot></slot>
 </div>`;
   }

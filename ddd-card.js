@@ -26,18 +26,13 @@ export class DddCard extends DDD {
     this.data = {};
     this.image = "";
     this.link = "";
-    this.loading = false;
-
-
+    this.primary = "";
+    this.accent = ""; 
     
+
   }
 
 
-
-  
-  
-
- 
 
 
 
@@ -51,7 +46,12 @@ export class DddCard extends DDD {
       link: { type: String },
       description: { type: String },
       image: { type: String },
-      loading: { type: Boolean, reflect: true },
+      primary: {
+        type: String,
+        Reflect: true,
+        DDDDataAttributes: "data-primary",
+      },
+      
     };
   }
 
@@ -64,37 +64,66 @@ export class DddCard extends DDD {
           color: var(--ddd-theme-primary);
           background-color: var(--ddd-theme-accent);
           font-family: var(--ddd-font-navigation);
+          border: 1 px solid var(---ddd-theme-color, #ccc);
           border-radius: var(--ddd-radius-sm);
-          padding: var(--ddd-spacing-3);
-          max-width: 400px;
           border: var(--ddd-border-xs);
+          width: 400px;
+          height: 600px;
+          padding: 0px;
           
         }
         img { 
           max-width: 100%;
           border-radius: var(--ddd-radius-sm);  
+          border-bottom: 12px var(--ddd-theme-default-nittanyNavy) solid;
+          border-bottom-left-radius: 0px;
+          border-bottom-right-radius: 0px;
         }
+  
+
+        .details {
+          padding: var(--ddd-spacing-3);
+          margin: 0px;
+          height: 120px;
+          overflow: hidden;
+        }
+        
         .wrapper {
+          
           margin: var(--ddd-spacing-2);
           padding: var(--ddd-spacing-4);
         }
         
-        h3 span {
+        .title{
           font-size: var(--link-preview-card-label-font-size, var(--ddd-font-size-s));
+          color: var(--ddd-theme-default-nittanyNavy);
+          padding: var(--ddd-spacing-3);
+          margin: 10px 0px 10px 0px;
           border-bottom: var(--ddd-spacing-1) solid var(--ddd-theme-primary);
         }
+        .button a {
+          color: var(--ddd-theme-default-white);
+      }
+        
   
-        .loading-spinner {
-          margin: 20px auto;
-          border: 4px solid #f3f3f3;
-          border-top: 4px solid #3498db;
-          border-radius: 50%;
-          width: 30px;
-          height: 30px;
-          animation: spin 2s linear infinite;
-        }
+      .button {
+        background-color: var(--ddd-theme-default-link);
+        padding: 0px 140px;
+        margin: 0px 20px 50px 20px;
+        font-size: 16px;
+        font-weight: var(--ddd-font-weight-bold);
+        color: var(--ddd-theme-default-white);
+        border: none;
+        border-radius: 5px;
+        height: 50px;
+      }
+
+      button:hover {
+        background-color: var(--ddd-theme-default-nittanyNavy);
+        
+      }
   
-        @keyframes spin {
+@keyframes spin {
           0% {
             transform: rotate(0deg);
           }
@@ -106,22 +135,20 @@ export class DddCard extends DDD {
       `];
     }
 
-  // Lit render the HTML
-  render() {
-    return html`
-  <div class="preview" part="preview">
-        ${this.loading
-          ? html`<div class="loading-spinner" part="loading-spinner"></div>`
-          : html`
-            ${this.image ? html`<img src="${this.image}" alt=${this.label} />` : ''}
-            <div class="content" part="content">
-              <h3 class="title" part="title">${this.title}</h3>
-              <slot></slot>
-              <a href="${this.link}" target="_blank" class="url" part="url">Visit Site</a>
-            </div>
-        `}
-      </div>`;
-  }
+ // Lit render the HTML
+render() {
+  return html`
+    <div class="img-container" part="img-container">
+      ${this.image ? html`<img src="${this.image}" alt=${this.label} />` : ''}
+      </div>
+      <div class="content" part="content">
+        <h3 class="title" part="title">${this.title}</h3>
+        <div class="details" part="details"><slot></slot></div>
+        <button class="button"><a href="${this.link}" target="_blank">Explore ></a></button>
+      </div>
+    
+  `;
+}
 
   
 }
