@@ -60,65 +60,76 @@ export class DddCard extends DDD {
       return [super.styles,
       css`
         :host {
-          display: block;
-          color: var(--ddd-theme-primary);
+          display: inline-block;
+          color: var(--ddd-theme-default-coalyGray);
           background-color: var(--ddd-theme-accent);
-          font-family: var(--ddd-font-navigation);
-          border: 1 px solid var(---ddd-theme-color, #ccc);
+          font-family: var(--ddd-font-primary);
           border-radius: var(--ddd-radius-sm);
           border: var(--ddd-border-xs);
-          width: 400px;
-          height: 600px;
-          padding: 0px;
           
         }
         img { 
           max-width: 100%;
           border-radius: var(--ddd-radius-sm);  
-          border-bottom: 12px var(--ddd-theme-default-nittanyNavy) solid;
-          border-bottom-left-radius: 0px;
-          border-bottom-right-radius: 0px;
+          border-bottom: 12px var(--ddd-theme-primary) solid;
+          border-bottom-left-radius: var(--ddd-radius-0);
+          border-bottom-right-radius: var(--ddd-radius-0);
         }
   
 
         .details {
-          padding: var(--ddd-spacing-3);
-          margin: 0px;
-          height: 120px;
+          padding: 0px 16px;
+          margin: var(--ddd-radius-0);
+          height: 150px;
           overflow: hidden;
+          line-height: var(--ddd-lh-150);
         }
         
         .wrapper {
-          
           margin: var(--ddd-spacing-2);
-          padding: var(--ddd-spacing-4);
+          padding: 16px 16px 20px;
         }
         
         .title{
           font-size: var(--link-preview-card-label-font-size, var(--ddd-font-size-s));
-          color: var(--ddd-theme-default-nittanyNavy);
+          color: var(--ddd-theme-primary);
           padding: var(--ddd-spacing-3);
-          margin: 10px 0px 10px 0px;
-          border-bottom: var(--ddd-spacing-1) solid var(--ddd-theme-primary);
+          font-weight: var(--ddd-font-weight-bold);
+          margin: var(--ddd-spacing-0);
+          
         }
         .button a {
-          color: var(--ddd-theme-default-white);
+          color: var(--ddd-theme-accent);
       }
         
   
       .button {
+        display: flex;
         background-color: var(--ddd-theme-default-link);
-        padding: 0px 140px;
-        margin: 0px 20px 50px 20px;
-        font-size: 16px;
+        padding: 0px 100px;
+        margin: 10px 20px 20px 20px;
+        justify-content: center;
+        align-items: center;
+        vertical-align: center;
+        font-size: var(--ddd-font-size-4xs);
         font-weight: var(--ddd-font-weight-bold);
         color: var(--ddd-theme-default-white);
         border: none;
-        border-radius: 5px;
+        border-radius: var(--ddd-radius-sm);
         height: 50px;
+        width: 90%;
+        cursor: pointer;
       }
 
-      button:hover {
+      a{
+        margin: auto 0;
+      }
+      a:link,
+      a:visited {
+        vertical-align: center;
+        background-color: var(--ddd-theme-default-link);
+      }
+      button:hover, a:hover, a:active {
         background-color: var(--ddd-theme-default-nittanyNavy);
         
       }
@@ -144,7 +155,7 @@ render() {
       <div class="content" part="content">
         <h3 class="title" part="title">${this.title}</h3>
         <div class="details" part="details"><slot></slot></div>
-        <button class="button"><a href="${this.link}" target="_blank">Explore ></a></button>
+        <a href="${this.link}" target="_blank"><button class="button">Explore ></button></a>
       </div>
     
   `;

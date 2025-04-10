@@ -13,9 +13,13 @@
       padding: 0;
     }
     #demo {
-      margin: var(--ddd-spacing-2);
+      margin: 0;
     }
-    ddd-card-list {
+    ddd-card-list p, ddd-card-list h3 {
+      margin: 0;
+      
+    }
+    ddd-card-list{
       margin: var(--ddd-spacing-2);
       border: var(--ddd-border-md);
       border-radius: var(--ddd-radius-lg);
@@ -36,14 +40,13 @@
   <div id="demo">
     <h1>ddd-card-list</h1>
     <!-- this is going to do whatever the tag's defaults are -->
-    <h2>Campus Locations</h2>
     
-    <ddd-card-list ddd-primary="10" ddd-accent="2">
+    <ddd-card-list data-primary="2" data-accent="6">
 
-      <ddd-card title ="Abington" 
+      <ddd-card title="Abington" 
       link="https://www.psu.edu/academics/campuses/abington" 
       image="https://images.ctfassets.net/ni9rh5nu0d99/1paFaX2Dc7iHh9Z6K7mIim/1427b9970ff21dd9c8a770067638efc1/abington-02.jpg?fm=webp&w=1080&q=75">
-      <p>Close to Philadelphia, Penn State Abington’s suburban campus offers bachelor's degrees, athletics, and a diverse student community.</p></ddd-card>
+      <p>Close to Philadelphia, Penn State Abington's suburban campus offers bachelor's degrees, athletics, and a diverse student community.</p></ddd-card>
 
       <ddd-card title ="Altoona"
       link="https://www.psu.edu/academics/campuses/altoona"
